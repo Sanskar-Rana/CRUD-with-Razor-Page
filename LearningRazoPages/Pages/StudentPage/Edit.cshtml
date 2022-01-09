@@ -1,0 +1,33 @@
+﻿@page
+@model LearningRazoPages.Pages.StudentPage.EditModel
+@{
+    ViewData["Title"] = "Edit Student Information";
+}
+
+<div asp-validation-summary="All"></div>
+<form method="post">
+    <input hidden asp-for="Student.Id" />
+    <div class="border p-3 mt-4">
+        <h2 class="text-primary pl-3">Edit Student Record</h2>
+        <hr />
+   
+    <div class="mb-3">
+        <label asp-for="Student.studentName"></label>
+        <input type="text" asp-for="Student.studentName" class="form-control" />
+        <span asp-validation-for="Student.studentName" ></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Student.studentAddress"></label>
+        <input type="text" asp-for="Student.studentAddress" class="form-control" />
+        <span asp-validation-for="Student.studentAddress" ></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a class="btn btn-secondary mx-2" asp-page="Index">Back to List</a>
+     </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
